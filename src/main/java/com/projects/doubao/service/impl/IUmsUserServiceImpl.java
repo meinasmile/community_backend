@@ -4,11 +4,11 @@ package com.projects.doubao.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.projects.doubao.common.exception.ApiAsserts;
-//import com.projects.doubao.jwt.JwtUtil;
+import com.projects.doubao.jwt.JwtUtil;
 //import com.projects.doubao.mapper.BmsFollowMapper;
 //import com.projects.doubao.mapper.BmsTopicMapper;
 import com.projects.doubao.mapper.UmsUserMapper;
-//import com.projects.doubao.model.dto.LoginDTO;
+import com.projects.doubao.model.dto.LoginDTO;
 import com.projects.doubao.model.dto.RegisterDTO;
 //import com.projects.doubao.model.entity.BmsFollow;
 //import com.projects.doubao.model.entity.BmsPost;
@@ -57,7 +57,6 @@ public class IUmsUserServiceImpl extends ServiceImpl<UmsUserMapper, UmsUser> imp
 
         return addUser;
     }
-    /**
     @Override
     public UmsUser getUserByUsername(String username) {
         return baseMapper.selectOne(new LambdaQueryWrapper<UmsUser>().eq(UmsUser::getUsername, username));
@@ -78,6 +77,7 @@ public class IUmsUserServiceImpl extends ServiceImpl<UmsUserMapper, UmsUser> imp
         }
         return token;
     }
+    /**
     @Override
     public ProfileVO getUserProfile(String id) {
         ProfileVO profile = new ProfileVO();
